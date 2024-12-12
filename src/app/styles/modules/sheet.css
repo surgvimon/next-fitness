@@ -1,0 +1,49 @@
+/* Sheet */
+
+.sheet-drag-target {
+  @apply h-[32px];
+  @apply w-[100%];
+  @apply relative;
+}
+
+.sheet-drag-target::before {
+  content: "";
+  width: 40px;
+  height: 5px;
+  border-radius: 99px;
+  background-color: #ddd;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.sheet-content {
+  @apply absolute;
+  @apply top-[32px];
+  @apply right-0;
+  @apply bottom-0;
+  @apply left-0;
+  @apply z-10;
+  @apply overflow-hidden;
+}
+
+.backdrop {
+  @apply absolute;
+  @apply top-0;
+  @apply bottom-0;
+  @apply bg-white;
+  @apply rounded-t-[8px];
+  @apply shadow-[0_0_0_0.3];
+  @apply flex;
+  @apply flex-col;
+  @apply w-[100vw];
+}
+
+.sheet-drag-handle {
+  @apply h-[32px];
+  @apply absolute;
+  @apply top-0;
+  @apply left-0;
+  @apply right-0;
+}

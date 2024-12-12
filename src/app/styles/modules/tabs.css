@@ -1,0 +1,54 @@
+.tab-main {
+  @apply min-h-[calc(100vh-theme(spacing.tab54))];
+  @apply mb-tab54;
+}
+
+.tabs {
+  @apply fixed;
+  @apply left-0;
+  @apply right-0;
+  @apply bottom-0;
+  @apply bg-white;
+  @apply z-[9999];
+  @apply shadow-[0px_0px_12px_rgba(0,0,0,0.05)];
+}
+.tab-indicator {
+  @apply absolute;
+  @apply top-[8px];
+  @apply bottom-[8px];
+  @apply left-[8px];
+  @apply right-[8px];
+  @apply bg-slate-300;
+  @apply rounded-[8px];
+  @apply z-10;
+}
+
+.tab-link {
+  @apply flex-1;
+  @apply flex;
+  @apply items-center;
+  @apply justify-center;
+  /* @apply h-[var(--TAB_HEIGHT)]; */
+  @apply relative;
+  transition: transform 100ms ease;
+}
+.tab-link:active > svg {
+  transform: scale (1.1);
+}
+.tab-link > svg {
+  @apply z-20;
+}
+
+.tabs-stack {
+  @apply flex;
+}
+.tab-screen {
+  /* @apply min-h-[calc(100vh-var(--TAB_HEIGHT))]; */
+  @apply min-h-[100vh];
+  @apply bg-slate-100;
+  @apply p-2;
+  @apply relative;
+  /* @apply opacity-0; */
+  /* animation: name 200ms ease-in forwards; */
+  @apply z-10;
+}

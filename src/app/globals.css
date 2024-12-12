@@ -5,17 +5,49 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --primary: #f1f1f1;
+  --secondary: rgba(31, 209, 253, 0.4);
+  --tertiary: rgba(31, 209, 253, 0.6);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+/* @import "styles/base/baseline"; */
 
+@import "styles/modules/tabs";
+@import "styles/modules/empty-box";
+@import "styles/modules/shame";
+@import "styles/modules/sheet";
+
+html,
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: auto;
+  scroll-behavior: smooth;
+}
+
+/* Firefox Scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--secondary) var(--primary);
+}
+
+/* Chrome, Edge, and Safari Scrollbar */
+*::-webkit-scrollbar {
+  width: 17px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--primary);
+  border-radius: 0px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--secondary);
+  border-radius: 14px;
+  border: 3px solid var(--primary);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--tertiary);
 }

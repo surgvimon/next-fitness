@@ -1,0 +1,7 @@
+.empty-box {
+  @apply h-[200px];
+  @apply w-full;
+  @apply bg-gray-50;
+  @apply rounded-[8px];
+  @apply flex-none;
+}
