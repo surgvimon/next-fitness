@@ -31,7 +31,6 @@ const TabNavigator: React.FC<Props> = ({ tabs }) => {
                 key={tab.to}
                 baseColor={"black"}
                 activeColor={"secondary-dark-1"}
-                location={location}
               />
             ))}
           </div>

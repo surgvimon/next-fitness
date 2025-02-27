@@ -16,6 +16,8 @@
 @import "styles/modules/empty-box";
 @import "styles/modules/shame";
 @import "styles/modules/sheet";
+@import "styles/modules/fab";
+/* @import "styles/modules/button"; */
 
 html,
 body {
@@ -24,6 +26,7 @@ body {
   width: 100vw;
   height: auto;
   scroll-behavior: smooth;
+  overflow-y: scroll;
 }
 
 /* Firefox Scrollbar */
