@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import ReactDOM from "react-dom";
 // import styled from 'styled-components';
@@ -12,7 +13,7 @@ import { usePrevious } from "@/utils/common";
 import { scrollLock } from "@/utils/scroll";
 
 const SPRING_CONFIG = { stiffness: 300, damping: 30, mass: 0.2 };
-const CLOSE_Y = window.innerHeight + 50; // Add padding for closing animation
+// const CLOSE_Y = window.innerHeight + 50;
 const OPEN_Y = 32;
 
 const BottomSheet = ({
@@ -22,6 +23,8 @@ const BottomSheet = ({
   rootSelector: string;
   children: React.ReactNode;
 }) => {
+  const CLOSE_Y = window.innerHeight + 50;
+
   const { isOpen, el } = useBottomSheetState();
   const dispatch = useBottomSheetDispatch();
   const prevOpen = usePrevious(isOpen);
@@ -66,8 +69,10 @@ const BottomSheet = ({
 
   return (
     <div
-      className={`z-[9999999] fixed top-0 bottom-0 left-0 right-0 overflow-hidden ${
-        isOpen ? "cursor-pointer" : "cursor-none"
+      className={` ${
+        isOpen
+          ? "z-[9999999] fixed top-0 bottom-0 left-0 right-0 overflow-hidden bg-black/20 cursor-pointer"
+          : "cursor-none"
       }`}
     >
       <AnimatePresence>
@@ -209,6 +214,7 @@ const BottomSheetPortal = (props: any) => {
   return ReactDOM.createPortal(bottomSheet, portalRef.current);
 };
 
+/** */
 function applyGlobalStyles(rootSelector: string) {
   const body = document.getElementsByTagName("body")[0];
   const root = document.querySelector(rootSelector) as HTMLDivElement;

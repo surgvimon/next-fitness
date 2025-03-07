@@ -1,0 +1,83 @@
+* {
+  @apply !font-noto-looped;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100vh;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #cdcdcd transparent;
+  /* scrollbar-color: var(--secondary) var(--primary); */
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  /* background: var(--primary); */
+  background: transparent;
+  border-radius: 5px;
+  margin-block: 6px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #cdcdcd;
+  border-radius: 14px;
+  border: 3px solid var(--primary);
+  /* background-color: var(--secondary); */
+  /* border: 3px solid var(--primary); */
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #a6a6a6;
+  /* background-color: var(--secondary); */
+  border-radius: 14px;
+  border: 3px solid var(--primary);
+  /* border: 3px solid var(--primary); */
+}
+
+/* --Reset and boilerplate stuff-- */
+* {
+  box-sizing: border-box;
+}
+
+/* h1, h2, h3, h4, h5, h6 {
+  @apply font-noto-looped;
+}
+
+p {
+  @apply font-noto-looped;
+} */
+.no-scroll {
+  overflow: hidden;
+}
+
+.h1-font-size {
+  /* @apply text-[2.5rem]; */
+  @apply text-[20px];
+  @apply md:text-[3.1rem];
+  @apply xl:text-[3.7rem];
+}
+.h2-font-size {
+  @apply text-[16px];
+  /* @apply text-[1.9rem]; */
+  @apply md:text-[2.1rem];
+  @apply xl:text-[2.32rem];
+}
+.font-kanit {
+  font-family: "Kanit", sans-serif;
+}

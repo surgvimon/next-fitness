@@ -1,9 +1,11 @@
 "use client";
 import React from "react";
-import { Text } from "@/components/common";
+import { Fab, Text } from "@/components/common";
 import { TitledNavHeader } from "@/components/navigation";
-
+import { useRouter } from "next/navigation";
+import { IcnPlayArrow } from "../icons";
 const HomeStack = () => {
+  const router = useRouter();
   return (
     <>
       <TitledNavHeader title="Treenaa" />
@@ -25,6 +27,7 @@ const HomeStack = () => {
         <div className="empty-box" />
         <div className="empty-box" />
       </div>
+      <Fab icon={IcnPlayArrow} onClick={() => router.push("/smart-workout")} />
     </>
   );
 };

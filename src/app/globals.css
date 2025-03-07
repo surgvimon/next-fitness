@@ -17,7 +17,8 @@
 @import "styles/modules/shame";
 @import "styles/modules/sheet";
 @import "styles/modules/fab";
-/* @import "styles/modules/button"; */
+
+@import "styles/modules/workout-card";
 
 html,
 body {

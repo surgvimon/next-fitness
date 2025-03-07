@@ -29,7 +29,7 @@ const TitledNavHeader: React.FC<Props> = ({ title }) => {
         }}
         animate={hidden ? "hidden" : "visible"}
         transition={{ duration: 0.15, ease: "easeInOut" }}
-        className={`title-wrapper bg-white border-b fixed top-0 left-0 right-0 text-center py-3`}
+        className={`title-wrapper bg-white border-b fixed top-0 left-0 right-0 text-center py-3 z-50`}
       >
         <motion.span
           variants={{

@@ -3,7 +3,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 import LayoutProvider from "@/components/LayoutProvider";
 import MobileNavigator from "@/components/MobileNavigator";
-// import BottomSheetProvider from "@/components/BottomSheet";
+import ReduxProvider from "@/components/ReduxProvider";
+import { BottomSheetProvider } from "@/components/BottomSheet";
 
 export const metadata: Metadata = {
   title: "Fitness - home page",
@@ -17,11 +18,13 @@ export default function RootLayout({
 }>) {
   return (
     <>
-      <LayoutProvider>
-        {/* <BottomSheetProvider rootSelector="#root"> */}
-        <MobileNavigator>{children}</MobileNavigator>
-        {/* </BottomSheetProvider> */}
-      </LayoutProvider>
+      <ReduxProvider>
+        <BottomSheetProvider rootSelector="#root">
+          <LayoutProvider>
+            <MobileNavigator>{children}</MobileNavigator>
+          </LayoutProvider>
+        </BottomSheetProvider>
+      </ReduxProvider>
     </>
   );
 }

@@ -66,18 +66,26 @@ export const useScrollIntoView = (id?: string) => {
 
 
 // Source: https://markus.oberlehner.net/blog/simple-solution-to-prevent-body-scrolling-on-ios/
-const $body = document.querySelector('body') as HTMLBodyElement;
-let scrollPosition = 0;
+// const $body = document.querySelector('body') as HTMLBodyElement;
+// let scrollPosition = 0;
+// const test = document.querySelector('body');
+// console.log(test)
 
 export const scrollLock = {
   enable() {
-    scrollPosition = window.pageYOffset;
+    const $body = document.querySelector('body') as HTMLBodyElement;
+    let scrollPosition = 0;
+
+    scrollPosition = window.scrollY;
     $body.style.overflow = 'hidden';
     $body.style.position = 'fixed';
     $body.style.top = `-${scrollPosition}px`;
     $body.style.width = '100%';
   },
   disable() {
+    const $body = document.querySelector('body') as HTMLBodyElement;
+    let scrollPosition = 0;
+    
     $body.style.removeProperty('overflow');
     $body.style.removeProperty('position');
     $body.style.removeProperty('top');
